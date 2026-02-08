@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -6,14 +7,22 @@ import 'core/viewmodels/auth_view_model.dart';
 import 'core/viewmodels/habit_view_model.dart';
 import 'ui/theme/app_theme.dart';
 import 'ui/views/habit_form_view.dart';
-import 'ui/views/home_view.dart';
+
 import 'ui/views/login_view.dart';
+import 'ui/views/main_view.dart';
 import 'ui/views/signup_view.dart';
 import 'ui/views/splash_view.dart';
 import 'ui/views/stats_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    debugPrint('Firebase initialization failed (missing google-services.json?): $e');
+  }
+  
   await HiveService.initialize();
   runApp(const SmartRoutineApp());
 }
@@ -37,7 +46,7 @@ class SmartRoutineApp extends StatelessWidget {
           '/': (_) => const SplashView(),
           '/login': (_) => const LoginView(),
           '/signup': (_) => const SignupView(),
-          '/home': (_) => const HomeView(),
+          '/home': (_) => const MainView(),
           '/habit-form': (_) => const HabitFormView(),
           '/stats': (_) => const StatsView(),
         },

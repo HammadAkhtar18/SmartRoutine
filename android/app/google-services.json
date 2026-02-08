@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785396531634",
+    "project_id": "smartroutine-c6da4",
+    "storage_bucket": "smartroutine-c6da4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785396531634:android:1cffcd666381c2da4ea4ab",
+        "android_client_info": {
+          "package_name": "com.example.smart_routine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlDjY16dEQHBmQWCD7x6AuvYfANKJDVso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
